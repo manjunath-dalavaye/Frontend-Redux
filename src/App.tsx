@@ -1,14 +1,13 @@
+// src/App.tsx
+import React from 'react';
+import Counter from './components/counter';
 
-import './App.css'
-
-function App() {
-
-
+const App = () => {
   return (
-    <>
-    <h1>web dev</h1>
-    </>
-  )
-}
+    <div>
+      <Counter />
+    </div>
+  );
+};
 
-export default App
+export default App;

@@ -1,0 +1,106 @@
+// Variables
+$primary-color: #007bff;
+$hover-color: #0056b3;
+$background-color: #f4f4f4;
+$dark-background-color: #333;
+$light-text-color: #fff;
+$dark-text-color: #000;
+$font-family: Arial, sans-serif;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$padding: 20px;
+$border-radius: 5px;
+$button-padding: 10px;
+$button-margin: 5px;
+$warning-color: #ffcc00;
+$disabled-color: #999;
+
+// Mixin for Flexbox Centering
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for Button Styling
+@mixin button-styles($bg-color, $hover-color, $disabled: false) {
+  margin: $button-margin;
+  padding: $button-padding;
+  font-size: 16px;
+  border: none;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  color: white;
+  cursor: pointer;
+  opacity: if($disabled, 0.5, 1);
+  pointer-events: if($disabled, none, auto);
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+// Base Styles
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $dark-text-color;
+  @include flex-center;
+  height: 100vh;
+  margin: 0;
+
+  &.dark-mode {
+    background-color: $dark-background-color;
+    color: $light-text-color;
+  }
+}
+
+.counter-container {
+  text-align: center;
+  background-color: white;
+  padding: $padding;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  color: $dark-text-color;
+
+  &.dark-mode {
+    background-color: $dark-background-color;
+    color: $light-text-color;
+  }
+
+  .counter-value {
+    font-size: 2rem;
+    margin-bottom: $padding / 2;
+  }
+
+  .warning-message {
+    color: $warning-color;
+    font-size: 1rem;
+    margin-top: $padding / 2;
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+
+  .dark-mode-toggle {
+    margin-top: $padding;
+    @include button-styles($primary-color, $hover-color);
+
+    &.dark-mode {
+      background-color: $dark-background-color;
+      color: $light-text-color;
+
+      &:hover {
+        background-color: darken($dark-background-color, 10%);
+      }
+    }
+  }
+
+  button {
+    @include button-styles($primary-color, $hover-color);
+    &.disabled {
+      @include button-styles($disabled-color, $disabled-color, true);
+    }
+  }
+}
