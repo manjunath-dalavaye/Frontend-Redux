@@ -1,0 +1,22 @@
+.task-list-container {
+  padding: 20px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+}
+.task-list-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+}
+.task-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+.task-list-container ul li {
+  background-color: #2ecc71;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 3px;
+}/*# sourceMappingURL=main.css.map */
