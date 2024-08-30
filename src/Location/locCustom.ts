@@ -26,6 +26,7 @@ const useGeolocation = () => {
         const nav= navigator.geolocation.clearWatch(watchId);
         console.log("nav",nav);       
         // console.log(watchId):
+        //After using useEffect practice to clear data i.e previous data
       };
     } else {
       setLoading(true);
