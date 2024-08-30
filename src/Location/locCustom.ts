@@ -9,6 +9,7 @@ const useGeolocation = () => {
     const handleSuccess = (pos: GeolocationPosition) => {
       setPosition(pos);
       setLoading(false);
+    //   console.log(pos);
     };
 
     const handleError = (err: GeolocationPositionError) => {
@@ -20,11 +21,14 @@ const useGeolocation = () => {
       navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
       const watchId = navigator.geolocation.watchPosition(handleSuccess, handleError);
 
+
       return () => {
-        navigator.geolocation.clearWatch(watchId);
+        const nav= navigator.geolocation.clearWatch(watchId);
+        console.log("nav",nav);       
+        // console.log(watchId):
       };
     } else {
-      setLoading(false);
+      setLoading(true);
       console.log('Geolocation is not supported by this browser.')
     }
   }, []);
