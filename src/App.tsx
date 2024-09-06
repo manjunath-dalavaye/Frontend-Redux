@@ -1,11 +1,13 @@
 import './App.css'
-import UseStated from './useState'
+import UseCall from './Learnings/useCallback'
+// import UseStated from './Learnings/useState'
 
 const App: React.FC = () =>{
 
   return (
     <>
-     <UseStated />
+     {/* <UseStated /> */}
+     <UseCall />
     </>
   )
 }

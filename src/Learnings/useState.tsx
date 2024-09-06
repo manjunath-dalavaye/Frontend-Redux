@@ -21,7 +21,7 @@ const UseStated: React.FC=()=>{
     <button onClick={HandleClick}>change number</button>
 
     {/* Button for object */}
-    <h3>position value:{position.x}{ position.y}</h3>
+    <h3>position value:{position.x}   { position.y}</h3>
     <button onClick={ButtonClick}>Change object</button>
     </>
   )
