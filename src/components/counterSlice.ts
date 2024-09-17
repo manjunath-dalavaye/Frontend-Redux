@@ -11,8 +11,8 @@ const ConterSlice = createSlice({
     name:"CounterSlice",
     initialState,
     reducers:{
-        increment:(state)=>{
-            state.value+=1
+        increment:(dot)=>{
+            dot.value+=1
         },
         decrement:(state)=>{
             state.value-=1
@@ -22,3 +22,17 @@ const ConterSlice = createSlice({
 
 export const {increment,decrement} = ConterSlice.actions;
 export default ConterSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

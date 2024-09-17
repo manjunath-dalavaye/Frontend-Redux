@@ -8,7 +8,6 @@ const Counter=()=>{
     const dispatch=useDispatch<DispatchState>();
 
     return (
-
         <>
         <h2>Count:{count}</h2>
         <button 
@@ -20,7 +19,6 @@ const Counter=()=>{
         onClick={()=>{
             dispatch(decrement());
             }}>Decrement</button>
-       
         </>
     )
 }
