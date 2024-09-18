@@ -4,7 +4,9 @@ import { decrement, increment } from './counterSlice';
 
 
 const Counter=()=>{
-    const count=useSelector((state:RootState) => state.counter.value)
+
+    
+    const count=useSelector((state:RootState) => state.counter.value) //counter from store //Initialy we dont know the type of the state so we get it from the rootState
     const dispatch=useDispatch<DispatchState>();
 
     return (
